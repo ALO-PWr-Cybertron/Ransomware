@@ -1,16 +1,22 @@
-FROM ubuntu:latest
+FROM python:3.7.14-buster
 
 RUN apt update
-RUN apt upgrade -y
-RUN apt install -y curl openssh-server
+RUN apt install -y openssh-server
 
-RUN systemctl start ssh
+RUN useradd -rm -d /home/ftp -s /bin/bash ftp
+RUN echo 'ftp:ftp' | chpasswd
+
+RUN service ssh start
 EXPOSE 22
 
 COPY ./data /home/ftp
 
-COPY ./scripts /tmp/scripts
-RUN /tmp/scripts/encrypt.sh /home/ftp
+COPY ./scripts/requirements.txt /tmp/scripts/
+RUN pip install -r /tmp/scripts/requirements.txt
+
+COPY ./scripts/encrypt.py /tmp/scripts/
+RUN python /tmp/scripts/encrypt.py /home/ftp
+
 RUN rm -rf /tmp/scripts
 
-CMD bash
+CMD /usr/sbin/sshd -D
