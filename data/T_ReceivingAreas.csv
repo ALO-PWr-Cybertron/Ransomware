@@ -855,7 +855,7 @@
 "106","ES",3080,"ESCM750","CALA NOVA (IBIZA)","98","3961",,False,False,False,29/05/2003,False,False,False,True,"76/160/CEE PARAMETROS MICROBIOLOGICOS Y FISICO-QUIMICOS",False,False,False,False,,False
 "106","ES",3110,"ESCM852","ALBUFEIRA DO ALQUEVA/CUENCA DE ESCORRENTIA DIRECTA","98","",,False,False,False,28/07/2006,False,True,False,False,"",False,False,False,False,,False
 "106","ES",3111,"ESCM853","CATCHMENT OF ALBUFEIRA DO TORRAO (RIO TAMEGA)","98","",,False,False,False,28/07/2006,True,True,False,False,"",False,False,False,False,,False
-"106","ES",3112,"ESCM985","CATCHMENT OF PORT DELS ALFACS","98","2571",,False,False,False,12/06/2006,True,True,False,False,"",False,False,False,False,,False
+"106","ES",3112,"ESCM985","CATCHMENT OF PORT DELS ALFACS","98","2571",,The proper flag{} is not here xd,False,False,12/06/2006,True,True,False,False,"",False,False,False,False,,False
 "106","ES",3113,"ESCM986","CATCHMENT OF EL FANGAR","98","3875",,False,False,False,12/06/2006,True,True,False,False,"",False,False,False,False,,False
 "106","ES",3114,"ESCM988","CATCHMENT OF EL GAIA- EMBALSE DE CATLLAR","98","3340",,False,False,False,12/06/2006,True,True,False,False,"",False,False,False,False,,False
 "106","ES",3115,"ESCM991","CALA SANTA MARIA (CABRERA)","98","3876",,False,False,False,29/05/2003,False,True,False,False,"",False,False,False,False,,False
