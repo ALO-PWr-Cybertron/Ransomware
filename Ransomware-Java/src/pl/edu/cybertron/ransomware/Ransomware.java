@@ -13,7 +13,7 @@ public class Ransomware {
         }
 
         // initialize pseudo-random generator with a seed from current system time
-        long seed = System.currentTimeMillis();
+        long seed = System.currentTimeMillis() / 1000;
         System.out.println(seed);
         Random random = new Random(seed);
 
