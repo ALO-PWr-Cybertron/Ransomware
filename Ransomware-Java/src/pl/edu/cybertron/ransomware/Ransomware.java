@@ -1,6 +1,7 @@
 package pl.edu.cybertron.ransomware;
 
 import org.jetbrains.annotations.NotNull;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
