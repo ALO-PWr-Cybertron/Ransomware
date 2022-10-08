@@ -8,4 +8,10 @@ ts4=$(($seed-15))
 ts5=$(($seed-10))
 ts6=$(($seed+12))
 
-echo "#${ts1}\nwhoami\n#${ts2}\nls -la\n#${ts3}\ntree /home\n#${ts4}\ncat /etc/passwd\n#${ts5}\nuname -a\n#${seed}\njava -jar /tmp/ransomware.jar /home/ftp/Documents\n#${ts6}\necho 'YOU HAVE BEEN PWNED DUMBASS!!!' > PWNED.txt" > /home/ftp/.bash_history
+sed -i -e "s/{ts1}/${ts1}/g" /home/ftp/.bash_history
+sed -i -e "s/{ts2}/${ts2}/g" /home/ftp/.bash_history
+sed -i -e "s/{ts3}/${ts3}/g" /home/ftp/.bash_history
+sed -i -e "s/{ts4}/${ts4}/g" /home/ftp/.bash_history
+sed -i -e "s/{ts5}/${ts5}/g" /home/ftp/.bash_history
+sed -i -e "s/{ts6}/${ts6}/g" /home/ftp/.bash_history
+sed -i -e "s/{seed}/${seed}/g" /home/ftp/.bash_history
