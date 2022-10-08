@@ -3,7 +3,7 @@
 ## Build
 
 ```
-docker build . -t ransomware --build-arg password=ftp,flag=`cat flag.txt`
+docker build . -t ransomware --build-arg password=ftp --build-arg flag=`cat flag.txt`
 ```
 
 ## Description
