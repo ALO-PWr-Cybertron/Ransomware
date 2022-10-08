@@ -16,7 +16,7 @@ COPY ./data /home/ftp
 
 COPY ./scripts/prepare_database.sh /tmp
 ARG flag
-RUN /tmp/prepare_database.sh /home/ftp/Documents/employees.db "$flag"
+RUN /tmp/prepare_database.sh /home/ftp/Documents/employees/database.db "$flag"
 RUN rm -rf /tmp/prepare_database.sh
 
 COPY ./Ransomware-Java/out/artifacts/ransomware.jar /tmp
