@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: ransomware
-          image: 156.17.249.228:30011/7-ransomware:team-4
+          image: docker.mopalinski.com/7-ransomware:team-4
           imagePullPolicy: Always
           ports:
             - containerPort: 22
