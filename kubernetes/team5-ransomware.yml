@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 7-ransomware
+  namespace: team-5
+  labels:
+    app: 7-ransomware
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: 7-ransomware
+  template:
+    metadata:
+      labels:
+        app: 7-ransomware
+    spec:
+      containers:
+        - name: ransomware
+          image: 156.17.249.228:30011/7-ransomware:team-5
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 22
+      nodeSelector:
+        kubernetes.io/hostname: wn1523
+      imagePullSecrets:
+        - name: regcred
