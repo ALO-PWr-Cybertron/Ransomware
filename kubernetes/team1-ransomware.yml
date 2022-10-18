@@ -1,27 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: 7-ransomware
-  namespace: team-1
-  labels:
-    app: 7-ransomware
+    name: cybertron-7-ransomware
+    namespace: team-1
+    labels:
+        app: cybertron-7-ransomware
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: 7-ransomware
-  template:
-    metadata:
-      labels:
-        app: 7-ransomware
-    spec:
-      containers:
-        - name: 7-ransomware
-          image: docker.mopalinski.com/7-ransomware:team-1
-          imagePullPolicy: Always
-          ports:
-            - containerPort: 22
-      nodeSelector:
-        kubernetes.io/hostname: wn1523
-      imagePullSecrets:
-        - name: regcred
+    replicas: 1
+    selector:
+        matchLabels:
+            app: cybertron-7-ransomware
+    template:
+        metadata:
+            labels:
+                app: cybertron-7-ransomware
+        spec:
+            containers:
+                - name: cybertron-7-ransomware
+                  image: docker.mopalinski.com/cybertron-7-ransomware:latest
+                  imagePullPolicy: Always
+                  ports:
+                      - containerPort: 22
+            nodeSelector:
+                kubernetes.io/hostname: wn1523
+            imagePullSecrets:
+                - name: regcred
