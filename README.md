@@ -12,6 +12,11 @@ Black-hat hackers infected one of the main servers of the water treatment statio
 They have encrypted very important files required for smooth operation of the facility.
 Access the infected machine and check if the hackers left anything behind that would help you with recovering the data.
 
+In your Kubernetes namespace there is a pod with a name like: `cybertron-7-ransomware`.
+It has SSH server listening on port 22.
+Username: `ftp`
+Password: `ftp`
+
 # Writeup
 
 -   Participant gets an interactive shell.
