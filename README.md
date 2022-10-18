@@ -3,7 +3,7 @@
 ## Build
 
 ```
-docker build . -t ransomware --build-arg flag=`cat flag.txt`
+docker build . -t cybertron-7-ransomware --build-arg flag=`cat flag.txt`
 ```
 
 ## Description
