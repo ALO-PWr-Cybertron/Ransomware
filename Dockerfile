@@ -4,8 +4,7 @@ RUN apt update
 RUN apt install -y openssh-server default-jre tree sqlite3
 
 RUN useradd -rm -d /home/ftp -s /bin/bash ftp
-ARG password
-RUN echo ftp:$password | chpasswd
+RUN echo ftp:ftp | chpasswd
 
 RUN service ssh start
 EXPOSE 22
